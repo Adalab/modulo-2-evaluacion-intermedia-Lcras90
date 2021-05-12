@@ -13,6 +13,7 @@ console.log(max);
 
 function handlerInput(event) {
   event.preventDefault();
+//   let valid = p1.value.match(/^[1-9][0-9]?$|^100$)/);
   let value = parseInt(user.value);
   if (value < max) {
     p1.innerText = "Demasiado bajo";
@@ -20,7 +21,9 @@ function handlerInput(event) {
     p1.innerText = "Demasiado alto";
   } else if (value === max) {
     p1.innerText = "¡¡¡Has ganado campeona!!!";
-  }
+//   } else if ((valid = max)) {
+//     p1.innerText = "El número debe estar entre 1 y 100";
+//   }
 }
 
 function countClick() {
