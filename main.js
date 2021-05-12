@@ -3,6 +3,8 @@ let user = document.querySelector('input[name="inpuT"]');
 const buttoN = document.querySelector(".js-button");
 let count = 0;
 let max = getRandomNumber(100);
+const p1 = document.querySelector(".js-paragraph1");
+const p2 = document.querySelector(".js-paragraph2");
 
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
@@ -13,7 +15,6 @@ function handlerInput(event) {
   event.preventDefault();
   let value = parseInt(user.value);
   if (value < max) {
-    const p1 = document.querySelector(".js-paragraph1");
     p1.innerText = "Demasiado bajo";
   } else if (value > max) {
     p1.innerText = "Demasiado alto";
@@ -24,8 +25,8 @@ function handlerInput(event) {
 
 function countClick() {
   count += 1;
-  const p2 = document.querySelector(".js-");
-  p2.innerText = "";
+  p2.innerText = `Número de intentos: ${count}`;
 }
 
 buttoN.addEventListener("click", handlerInput);
+buttoN.addEventListener("click", countClick);
