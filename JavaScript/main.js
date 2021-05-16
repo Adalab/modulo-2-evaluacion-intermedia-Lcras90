@@ -11,10 +11,11 @@ function getRandomNumber(max) {
 }
 console.log(max);
 
-function handlerInput(event) {
-  event.preventDefault();
+function handlerInput() {
   let value = parseInt(user.value);
-  if (value < max) {
+  if (value < 1 || value > 100) {
+    p1.innerText = "El número tiene que estar comprendido entre 1 y 100";
+  } else if (value < max) {
     p1.innerText = "Demasiado bajo";
   } else if (value > max) {
     p1.innerText = "Demasiado alto";
@@ -28,5 +29,10 @@ function countClick() {
   p2.innerText = `Número de intentos: ${count}`;
 }
 
-buttoN.addEventListener("click", handlerInput);
-buttoN.addEventListener("click", countClick);
+function handlerClick(event) {
+  event.preventDefault();
+  handlerInput();
+  countClick();
+}
+
+buttoN.addEventListener("click", handlerClick);
