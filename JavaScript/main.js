@@ -14,14 +14,17 @@ console.log(max);
 function handlerInput() {
   let value = parseInt(user.value);
   if (value < 1 || value > 100) {
-    p1.innerText = "El número tiene que estar comprendido entre 1 y 100";
+    handlerPrint("El número tiene que estar comprendido entre 1 y 100");
   } else if (value < max) {
-    p1.innerText = "Demasiado bajo";
+    handlerPrint("Demasiado bajo");
   } else if (value > max) {
-    p1.innerText = "Demasiado alto";
+    handlerPrint("Demasiado alto");
   } else if (value === max) {
-    p1.innerText = "¡¡¡Has ganado campeona!!!";
+    handlerPrint("¡¡¡Has ganado campeona!!!");
   }
+}
+function handlerPrint(mesage) {
+  p1.innerText = mesage;
 }
 
 function countClick() {
